@@ -29,7 +29,6 @@ services = {
     "dnslytics.com": "https://dnslytics.com/domain/{}",
     "spyonweb.com": "https://spyonweb.com/{}",
     "archive.org": "https://web.archive.org/web/*/{}",
-    "archive.eu": "https://archive.eu/{}",
     "CrowdTangle": "https://apps.crowdtangle.com/search?q={}&platform=facebook&sortBy=score&sortOrder=desc",
     "host.io": "https://host.io/{}"
 }
