@@ -26,16 +26,13 @@ def open_pages_with_random_delay(urls, min_delay, max_delay):
 services = {
     "Whois Lookup": "https://www.who.is/whois/{}",
     "Whoxy": "https://whoxy.com/{}",
-    "Threat Intelligence": "https://threatintelligenceplatform.com/{}",
     "Certificate Search": "https://crt.sh/?q={}",
     "Domain History": "https://securitytrails.com/domain/{}",
     "Malware Scanning": "https://www.virustotal.com/gui/domain/{}",
-    "urlscan.io": "https://urlscan.io/result/{}",
     "builtwith.com": "https://builtwith.com/relationships/{}",
     "dnslytics.com": "https://dnslytics.com/domain/{}",
     "spyonweb.com": "https://spyonweb.com/{}",
     "archive.org": "https://web.archive.org/web/*/{}",
-    "archive.eu": "https://archive.eu/{}",
     "CrowdTangle": "https://apps.crowdtangle.com/search?q={}&platform=facebook&sortBy=score&sortOrder=desc",
     "host.io": "https://host.io/{}"
 }
