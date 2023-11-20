@@ -1,25 +1,23 @@
+CAUTION: This email originated from outside of the organisation. Do not click links or open attachments unless you recognise the sender and know the content is safe.
+
 import streamlit as st
 from streamlit.components.v1 import html
 
-# Function to generate JavaScript for opening links with a random delay
-def open_pages_with_random_delay(urls, min_delay, max_delay):
+# Function to generate JavaScript for opening links with a delay
+def open_pages_with_delay(urls, delay):
+    delay_ms = delay * 1000  # Convert seconds to milliseconds
     script = """
         <script type="text/javascript">
             var urls = %s;
-            var minDelay = %s;
-            var maxDelay = %s;
-            var getRandomDelay = function(min, max) {
-                return Math.floor(Math.random() * (max - min + 1) + min);
-            }
+            var delay = %s;
             var openLink = function(index) {
                 if (index >= urls.length) return;
                 window.open(urls[index], '_blank');
-                var delay = getRandomDelay(minDelay, maxDelay);
                 setTimeout(function() { openLink(index + 1); }, delay);
             }
             openLink(0);
         </script>
-    """ % (urls, min_delay * 1000, max_delay * 1000)  # Convert to milliseconds
+    """ % (urls, delay_ms)
     html(script)
 
 # Services Dictionary
@@ -33,6 +31,7 @@ services = {
     "dnslytics.com": "https://dnslytics.com/domain/{}",
     "spyonweb.com": "https://spyonweb.com/{}",
     "archive.org": "https://web.archive.org/web/*/{}",
+    "archive.eu": "https://archive.eu/{}",
     "CrowdTangle": "https://apps.crowdtangle.com/search?q={}&platform=facebook&sortBy=score&sortOrder=desc",
     "host.io": "https://host.io/{}"
 }
@@ -61,6 +60,6 @@ for domain in domains:
     formatted_urls = [url.format(domain) for url in services.values()]
     all_formatted_urls.extend(formatted_urls)
 
-# Button to open all links with random delay
+# Button to open all links
 if st.button('Open All Links') and all_formatted_urls:
-    open_pages_with_random_delay(all_formatted_urls, min_delay=2, max_delay=5)  # Min and max delay in seconds
+    open_pages_with_delay(all_formatted_urls, delay=2)  # Set delay in seconds here
