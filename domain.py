@@ -34,10 +34,10 @@ services = {
 }
 
 # Text Input for single domain
-domain_input = st.text_input("Enter the domain you want to investigate (optional):", "")
+domain_input = st.text_input("Enter the domain you want to investigate:", "")
 
 # File Uploader for multiple domains
-file_uploader = st.file_uploader("Upload a .txt file with domains (one per line, optional):")
+file_uploader = st.file_uploader("Upload a .txt file with domains:")
 
 # Process the domains
 domains = []
