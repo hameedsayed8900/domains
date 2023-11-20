@@ -1,5 +1,3 @@
-CAUTION: This email originated from outside of the organisation. Do not click links or open attachments unless you recognise the sender and know the content is safe.
-
 import streamlit as st
 from streamlit.components.v1 import html
 
