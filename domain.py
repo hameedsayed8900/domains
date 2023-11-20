@@ -63,4 +63,4 @@ for domain in domains:
 
 # Button to open all links with random delay
 if st.button('Open All Links') and all_formatted_urls:
-    open_pages_with_random_delay(all_formatted_urls, min_delay=3, max_delay=10)  # Min and max delay in seconds
+    open_pages_with_random_delay(all_formatted_urls, min_delay=2, max_delay=5)  # Min and max delay in seconds
